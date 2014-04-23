@@ -28,7 +28,8 @@ echo "The CACHE_DIR is at [$CACHE_DIR]"
 echo "The build pack is situated at [$BUILD_PACK_DIR]"
 
 
-
+echo "Creating logs directory:
+mkdir $BUILD_DIR/logs
 
 echo "Creating start script"
 cat > "$BUILD_DIR/start.sh" <<EOF
@@ -39,8 +40,7 @@ echo "contents"
 ls -l
 echo "Home: $HOME"
 export APP_ROOT=$HOME
-mkdir $APP_ROOT/logs
-export LOG_FILE=$LOGS_DIR/sc.log
+export LOG_FILE=$APP_ROOT/logs/sc.log
 echo "Log file: $LOG_FILE"
 (tail -f -n 0 $LOG_FILE &)
 
