@@ -40,7 +40,8 @@ echo "contents"
 ls -l
 echo "Home: $HOME"
 export APP_ROOT=$HOME
-export LOG_FILE="$APP_ROOT/logs/sc.log"
+LOG_FILE="$APP_ROOT/logs/sc.log"
+export LOG_FILE
 echo "Log file: $LOG_FILE"
 (tail -f -n 0 $LOG_FILE &)
 
