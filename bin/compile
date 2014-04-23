@@ -33,4 +33,4 @@ echo "The build pack is situated at [$BUILD_PACK_DIR]"
 echo "Creating logs directory"
 mkdir $BUILD_DIR/logs
 
-cp $BUILD_PACK_DIR/start.sh $BUILD_DIR
+cp $BUILD_PACK_DIR/bin/start.sh $BUILD_DIR
