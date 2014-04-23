@@ -28,7 +28,7 @@ echo "The CACHE_DIR is at [$CACHE_DIR]"
 echo "The build pack is situated at [$BUILD_PACK_DIR]"
 
 
-echo "Creating logs directory:
+echo "Creating logs directory"
 mkdir $BUILD_DIR/logs
 
 echo "Creating start script"
