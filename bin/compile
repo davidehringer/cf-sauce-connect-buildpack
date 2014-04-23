@@ -37,3 +37,8 @@ cat > "$BUILD_DIR/start.sh" <<EOF
 bin/sc --user ETSLF --api-key 633246bc-bb5f-4986-a68c-4c6b7bcc4551 --proxy www-proxy.lmig.com:80 -v —se-port $VCAP_APP_PORT
 
 EOF
+
+chmod 770 $BUILD_DIR/start.sh
+
+echo "Build directory contents after compile..."
+ls -l $BUILD_DIR
