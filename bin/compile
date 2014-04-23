@@ -34,6 +34,9 @@ echo "Creating start script"
 cat > "$BUILD_DIR/start.sh" <<EOF
 #!/bin/bash
 
+echo "working dir: $(pwd)"
+echo "contents"
+ls -l
 echo "Home: $HOME"
 export APP_ROOT=$HOME
 mkdir $APP_ROOT/logs
