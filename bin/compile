@@ -22,6 +22,9 @@ else
   echo "Cache directory [$CACHE_DIR] exists"
 fi
 
+echo "contents of buildpack dir..."
+ls -l $BUILD_PACK_DIR
+
 echo "The compile script is at [$0]"
 echo "The BUILD_DIR is at [$BUILD_DIR]"
 echo "The CACHE_DIR is at [$CACHE_DIR]"
@@ -29,3 +32,5 @@ echo "The build pack is situated at [$BUILD_PACK_DIR]"
 
 echo "Creating logs directory"
 mkdir $BUILD_DIR/logs
+
+cp $BUILD_PACK_DIR/start.sh $BUILD_DIR
