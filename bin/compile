@@ -35,17 +35,10 @@ echo "Creating start script"
 cat > "$BUILD_DIR/start.sh" <<EOF
 #!/bin/bash
 
-echo "working dir: $(pwd)"
-echo "contents"
-ls -l
-echo "Home: $HOME"
-export APP_ROOT=$HOME
-echo "log file env: $($HOME/logs/sc.log)"
-export LOG_FILE="$HOME/logs/sc.log"
-echo "Log file: $LOG_FILE"
+touch $HOME/logs/sc.log
 (tail -f -n 0 $HOME/logs/sc.log &)
 
-bin/sc --user ETSLF --api-key 633246bc-bb5f-4986-a68c-4c6b7bcc4551 --proxy www-proxy.lmig.com:80 --proxy-tunnel --se-port $VCAP_APP_PORT --verbose --logfile $HOME/logs/sc.log 
+exec bin/sc --user ETSLF --api-key 633246bc-bb5f-4986-a68c-4c6b7bcc4551 --proxy www-proxy.lmig.com:80 --proxy-tunnel --se-port $VCAP_APP_PORT --verbose --logfile $HOME/logs/sc.log 
 
 EOF
 
