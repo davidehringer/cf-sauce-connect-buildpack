@@ -27,27 +27,5 @@ echo "The BUILD_DIR is at [$BUILD_DIR]"
 echo "The CACHE_DIR is at [$CACHE_DIR]"
 echo "The build pack is situated at [$BUILD_PACK_DIR]"
 
-
 echo "Creating logs directory"
 mkdir $BUILD_DIR/logs
-
-echo "Creating start script"
-cat > "$BUILD_DIR/start.sh" <<EOF
-#!/bin/bash
-
-touch $HOME/logs/sc.log
-(tail -f -n 0 $HOME/logs/sc.log &)
-
-bin/sc --user ETSLF --api-key 633246bc-bb5f-4986-a68c-4c6b7bcc4551 --proxy www-proxy.lmig.com:80 --proxy-tunnel --se-port $PORT --verbose --logfile $HOME/logs/sc.log >> $HOME/logs/sc.log 2>&1 &
-
-echo "Kicked off sc..." 
-echo "port: $PORT"
-
-env
-
-EOF
-
-chmod 770 $BUILD_DIR/start.sh
-
-echo "Build directory contents after compile..."
-ls -l $BUILD_DIR
