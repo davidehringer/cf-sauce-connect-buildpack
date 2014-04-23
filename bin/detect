@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+sc_executable_path = File.join ARGV[0], "bin/sc"
+
+if File.exist?(sc_executable_path)
+  puts "Sauce Connect Executable Found"
+  exit 0
+else
+  exit 1
+end
