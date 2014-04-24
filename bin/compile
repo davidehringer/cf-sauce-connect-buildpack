@@ -8,9 +8,18 @@ BUILD_PACK_DIR=$(dirname $(dirname $0))
 
 if [ -z "$SAUCE_USER" ]
 then
-  echo "empty SAUCE_USER"
+  echo "SAUCE_USER environment variable must be set"
+  exit 1;
 else
   echo "SAUCE_USER: $SAUCE_USER"
+fi
+
+if [ -z "$SAUCE_API_KEY" ]
+then
+  echo "SAUCE_API_KEY environment variable must be set"
+  exit 1;
+else
+  echo "SAUCE_API_KEY: $SAUCE_API_KEY"
 fi
 
 echo "Creating logs directory"
