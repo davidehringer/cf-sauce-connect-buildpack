@@ -6,6 +6,13 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 BUILD_PACK_DIR=$(dirname $(dirname $0))
 
+if [ -z "$SAUCE_USER" ]
+then
+  echo "empty SAUCE_USER"
+else
+  echo "SAUCE_USER: $SAUCE_USER"
+fi
+
 echo "Creating logs directory"
 mkdir $BUILD_DIR/logs
 
