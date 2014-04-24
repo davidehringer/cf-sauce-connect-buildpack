@@ -12,7 +12,7 @@ Create manifest.yml
 name: sauce-tunnel
 memory: 2G
 instances: 1
-buildpack: https://github.com/davidehringer/sauce-connect-buildpack.git
+buildpack: https://github.com/davidehringer/cf-sauce-connect-buildpack.git
 env:
   SAUCE_USER: your_user
   SAUCE_API_KEY: your_api_key
@@ -32,6 +32,6 @@ x sc-4.1-linux/bin/sc
 $ cp manifest.yml sc-4.1-linux/
 $ cd sc-4.1-linux/
 $ ls 
-bin		include		lib		license.html
+bin		include		lib		license.html	manifest.yml
 $ cf push
 ```
